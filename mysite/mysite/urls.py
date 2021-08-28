@@ -19,6 +19,8 @@ from django.urls import include, path
 from django.conf.urls import url
 from django.views.static import serve
 
+from django.views.generic.base import TemplateView
+
 
 # Up two folders to serve "site" content
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,4 +33,6 @@ urlpatterns = [
         {'document_root': SITE_ROOT, 'show_indexes': True},
         name='site_path'
     ),
+    path('',TemplateView.as_view(template_name='home/main.html')),
+    path('hello/',include('hello.urls')),
 ]
