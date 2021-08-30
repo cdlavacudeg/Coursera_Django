@@ -16,6 +16,7 @@
   {% else %}
     <p>There are no autos in the library.</p>
   {% endif %}
+
   <p>
     {% if make_count > 0 %}
       <a href="{% url 'autos:auto_create' %}">Add an auto</a>
@@ -24,7 +25,7 @@
     {% endif %}
   </p>
   <p>
-  <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) | 
+  <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) |
     <a href="{% url 'autos:make_create' %}">Add a make</a>
   </p>
 {% endblock %}
