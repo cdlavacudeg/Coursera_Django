@@ -1,10 +1,16 @@
-<head>
-    <meta name="dj4e" content="d30710eda505b38e92b01617a4702d80">
-</head>
+{% extends "base_menu.html" %}
 
-<ul>
-    <li><p><a href="/polls">A Polls Application</a></p></li>
-    <li><p><a href="/hello">Test the session</a></p>
-    <li><a href="/autos">Autos CRUD</a>
-    <li><a href="/cats">Cats CRUD</a>
-</ul>
+{% block content %}
+    <h1>Welcome to {{ settings.APP_NAME }}</h1>
+    <p>
+    Hello world.
+    </p>
+
+<p>
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}?next={% url 'ads:all' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}?next={% url 'ads:all' %}">Login</a>
+{% endif %}
+</p>
+{% endblock content %}
