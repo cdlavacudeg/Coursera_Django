@@ -59,6 +59,7 @@ try:
 except:
     print('Using registration/login.html as the login template')
 
+
 # References
 
 # https://docs.djangoproject.com/en/3.0/ref/urls/#include
